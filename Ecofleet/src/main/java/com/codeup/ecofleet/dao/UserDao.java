@@ -18,8 +18,8 @@ public class UserDao {
         String insertSql = "INSERT IGNORE INTO usuarios( nombre, email, telefono) VAUES (?, ?, ?)";
         try (PreparedStatement ps = conn.prepareStatement(insertSql)){
                ps.setString(1, usuario.getNombre());
-               ps.setString(1, usuario.getEmail());
-               ps.setString(1, usuario.getTelefono());
+               ps.setString(2, usuario.getEmail());
+               ps.setString(3, usuario.getTelefono());
                
                 int filas = ps.executeUpdate();
                 
