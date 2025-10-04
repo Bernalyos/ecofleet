@@ -39,9 +39,9 @@ public class AlquilerDao {
 
             int filas = ps.executeUpdate();
             if (filas == 0) {
-                System.out.println("⚠ No se insertó el alquiler (posiblemente ya exista).");
+                System.out.println(" No se insertó el alquiler (posiblemente ya exista).");
             } else {
-                System.out.println("✅ Alquiler insertado. Filas afectadas: " + filas);
+                System.out.println(" Alquiler insertado. Filas afectadas: " + filas);
             }
 
         } catch (SQLException e) {
@@ -97,7 +97,7 @@ public class AlquilerDao {
             ps.setInt(7, a.getId());
 
             ps.executeUpdate();
-            System.out.println("✅ Alquiler actualizado correctamente.");
+            System.out.println(" Alquiler actualizado correctamente.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -109,7 +109,7 @@ public class AlquilerDao {
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
             ps.executeUpdate();
-            System.out.println("🗑 Alquiler eliminado correctamente.");
+            System.out.println(" Alquiler eliminado correctamente.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
